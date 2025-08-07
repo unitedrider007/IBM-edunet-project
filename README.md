@@ -23,8 +23,9 @@ Design and deploy a Machine Learning-based Network Intrusion Detection System (N
   - Upgraded version includes multiclass labels: DoS, Probe, R2L, U2R
 
 📁 Datasets Used:
-- Train_data.csv
-- Test_data.csv
+> 🔗 Given Dataset:    
+> [Train_data.csv](https://github.com/unitedrider007/IBM-edunet-project/blob/main/Train_data.csv)      
+> [Test_data.csv](https://github.com/unitedrider007/IBM-edunet-project/blob/main/Test_data.csv)
 
 > 🔗 Enhanced Dataset with labeled attack types:  
 > [Train_data_with_attack_types_enhanced.csv](https://github.com/unitedrider007/IBM-edunet-project/blob/main/Train_data_with_attack_types_enhanced.csv)
@@ -53,18 +54,44 @@ Design and deploy a Machine Learning-based Network Intrusion Detection System (N
 7. Create an online deployment and test using Test_data.csv.
 8. Save predictions as Nids_test_result.json.
 
-> 🔗 Detailed Deployment Guide: See [NIDS_project.pdf](https://github.com/unitedrider007/IBM-edunet-project/blob/821d6dd230556f9d6506ff565e15bd31679cd199/NIDS_project.pdf)
+> 🔗 Detailed Deployment Guide: See [NIDS_project.pdf](https://github.com/unitedrider007/IBM-edunet-project/blob/main/NIDS_project.pdf)
 
 ---
 
 <h2>🎯 Output Highlights</h2>
 
 - Binary model: Detects anomalies vs normal
-- Upgraded model: Classifies attack type (DoS, R2L, Probe, U2R)
+- Upgraded model: Classifies attack type (DoS, R2L, Probe, U2R -refer below)
 - Prediction Accuracy: Near 100% (based on AutoAI output)
 - Output: JSON file with predictions and probability confidence
 
+<h2>🔧 For Version Update: Python Code for Multiclass Attack Type Labeling</h2>
 
+This upgrade uses [Python Code](https://github.com/unitedrider007/IBM-edunet-project/blob/main/update_Train_data_to_include_attack_types.py) to convert a binary-labeled dataset (Normal vs Anomaly) into a multiclass-labeled dataset (Normal, DoS, Probe, R2L, U2R) using rule-based logic.
+
+
+---
+
+<h3>🧩 Approach</h3>
+
+We defined signature profiles for each attack type using domain knowledge. Then, we wrote a function to score how well each row matches each profile.
+The best-matching attack type is selected and added as a new column `attack_type`.
+Each attack type is defined with its behavioral features:
+The column `attack_type` is appended to the dataset, and a binary `class` column is also mapped:
+- anomaly → DoS, Probe, R2L, U2R
+- normal → Normal
+
+---
+
+<h3>📁 Output</h3>
+
+A new dataset file:
+- ✅ `Train_data_with_attack_types.csv`
+
+This enriched dataset enables:
+- Multiclass ML training in IBM Watsonx.ai AutoAI
+- Better insight into types of threats
+- Model explainability
 ---
 
 <h2>🧪 Attack Signature Logic</h2>
@@ -79,7 +106,6 @@ IBM AutoAI learned attack patterns based on these feature indicators:
 | U2R         | root_shell = 1, su_attempted = 1, num_file_creations > 0 |
 
 ---
-
 
 ---
 
