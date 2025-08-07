@@ -8,7 +8,7 @@ This project is a no-code machine learning solution built using IBM Cloud's Wats
 
 Design and deploy a Machine Learning-based Network Intrusion Detection System (NIDS) capable of identifying and classifying various network-based attacks — such as DoS, Probe, R2L, and U2R — using real network traffic data.
 
-> 🔗 Problem Statement No. 40 from SB4 Academia AI Challenge 2025
+> Problem Statement No. 40 from SB4 Academia AI Challenge 2025
 
 ---
 
@@ -25,10 +25,9 @@ Design and deploy a Machine Learning-based Network Intrusion Detection System (N
 📁 Datasets Used:
 - Train_data.csv
 - Test_data.csv
-- Nids_test_result.json
 
 > 🔗 Enhanced Dataset with labeled attack types:  
-> https://github.com/unitedrider007/IBM-edunet-project/Train_data_with_attack_types_enhanced.csv
+> [Train_data_with_attack_types_enhanced.csv](https://github.com/unitedrider007/IBM-edunet-project/blob/main/Train_data_with_attack_types_enhanced.csv)
 
 ---
 
@@ -54,7 +53,7 @@ Design and deploy a Machine Learning-based Network Intrusion Detection System (N
 7. Create an online deployment and test using Test_data.csv.
 8. Save predictions as Nids_test_result.json.
 
-> 🔗 Detailed Deployment Guide: See NIDS_project.pdf
+> 🔗 Detailed Deployment Guide: See [NIDS_project.pdf](https://github.com/unitedrider007/IBM-edunet-project/blob/821d6dd230556f9d6506ff565e15bd31679cd199/NIDS_project.pdf)
 
 ---
 
@@ -88,7 +87,7 @@ IBM AutoAI learned attack patterns based on these feature indicators:
 
 - IBM Cloud: https://cloud.ibm.com  
 - Watsonx.ai Studio Docs: https://www.ibm.com/docs/en/watsonx/  
-- GitHub Enhanced Dataset: https://github.com/unitedrider007/IBM-edunet-project/blob/3592cf13bb57d194e4f4cb340f5fe60642a3bb2e/Train_data_with_attack_types_enhanced.csv
+- GitHub Enhanced Dataset: [Train_data_with_attack_types_enhanced.csv](https://github.com/unitedrider007/IBM-edunet-project/blob/main/Train_data_with_attack_types_enhanced.csv)
 ---
 
 <h2>🙋‍♂️ Author</h2>
